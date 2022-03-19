@@ -1,0 +1,147 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.create-job{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+.create-job h2{
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+.create-job form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .txt-field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.txt-field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.txt-field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.txt-field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: rgb(56, 55, 55);
+  transition: .5s;
+}
+.txt-field input:focus ~ label,
+.txt-field input:valid ~ label{
+  top: -5px;
+  color: rgb(56, 55, 55);
+}
+.txt-field input:focus ~ span::before,
+.txt-field input:valid ~ span::before{
+  width: 100%;
+}
+
+.submit{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: rgb(56, 55, 55);
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.submit:hover{
+  border-color: rgb(56, 55, 55);
+  transition: .5s;
+}
+
+
+/* job listing page styling */
+
+
+.list-job{
+  max-width: 405px;
+  padding: 28px 0 30px;
+  margin: 137px auto;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.list-job-item{
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 0 20px 10px 25px;
+}
+.list-job-item.overflow{
+  overflow-y: auto;
+  max-height: 300px;
+}
+.list-job-item::-webkit-scrollbar{
+  width: 5px;
+}
+.list-job-item::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.list-job-item::-webkit-scrollbar-thumb{
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+.list-job-item .item{
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  align-items: flex-start;
+  border-bottom: 1px solid rgb(56, 55, 55);
+  position: relative;
+}
+.list-job-item .item:last-child{
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.delete{
+  position: absolute;
+  right: 10px;
+  bottom: 50%;
+}
