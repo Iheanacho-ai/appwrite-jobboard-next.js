@@ -1,6 +1,4 @@
 const ListJobItem = ({jobList, handleDelete}) => {
-    console.log(jobList);
-    console.log(handleDelete)
     return (
         <div className="list-job-item">
             {
@@ -9,7 +7,7 @@ const ListJobItem = ({jobList, handleDelete}) => {
                         <h3>{jobTitle}</h3>
                         <p>{companyName}</p>
                         <p>{place}</p>
-                        <button className="delete" onClick={() => handleDelete($id)}>delete</button>
+                        <button type="button" className="delete" onClick={() => handleDelete($id)}>delete</button>
                     </div>
                 ))
             }

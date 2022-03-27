@@ -1,16 +1,9 @@
-import { Appwrite } from 'appwrite';
+import sdk from '../utils/web-init';
 import { useEffect, useState } from "react";
 import Link from 'next/link'
 
 
 const CreateJob = () => {
-    // Init your Web SDK
-    const sdk = new Appwrite();
-
-    sdk
-        .setEndpoint('http://localhost/v1') // Your API Endpoint
-        .setProject('62344efd2fc3d5d96374') // Your project ID
-    ;
 
     async function createAnonymousSession(){
         try{
@@ -35,9 +28,8 @@ const CreateJob = () => {
 
     const handleJobBoard = () => {
 
-        console.log('wetin dey occur', job)
      
-        let promise = sdk.database.createDocument('62344f0d239ea91e9c6d', 'unique()', {
+        let promise = sdk.database.createDocument('6240861391d0880c7d38', 'unique()', {
            "jobTitle" : job,
            "companyName": companyName,
            "place": place
@@ -77,7 +69,7 @@ const CreateJob = () => {
                     <span></span>
                     <label htmlFor="input">Place</label>
                 </div>
-                <div className='submit' onClick={handleJobBoard}>Add Job</div>
+                <button type= "button" className='submit' onClick={handleJobBoard}>Add Job</button>
             </form>
             <p>See your Job Board <Link href="/list-job"><a>here</a></Link></p>
         </div>
